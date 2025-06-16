@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Music player functionality
+    const music = document.getElementById('background-music');
+    const musicToggle = document.getElementById('music-toggle');
+    let isPlaying = false;
+
+    musicToggle.addEventListener('click', () => {
+        if (isPlaying) {
+            music.pause();
+            musicToggle.classList.remove('playing');
+        } else {
+            music.play();
+            musicToggle.classList.add('playing');
+        }
+        isPlaying = !isPlaying;
+    });
+
     // Add smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
